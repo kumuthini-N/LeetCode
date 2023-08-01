@@ -2,6 +2,13 @@ class DuplicateZeros {
 //    var a= intArrayOf(1,0,2,3,0,4,5,0)
     //0,4,1,0,0,8,0,0,3
     //0,0,4,1,0,0,8,0,0
+//    Input:
+//    [0,4,1,0,0,8,0,0,3]
+//    Output:
+//    [0,0,4,1,0,0,0,0,0]
+//    Expected:
+//    [0,0,4,1,0,0,0,0,8]
+
     fun findNumbers(nums: IntArray): IntArray {
         var copy = nums
         var a = copy.clone()
