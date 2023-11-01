@@ -1,4 +1,4 @@
-import java.util.Arrays;
+package Leetcode;
 
 /**
  * Largest Number At Least Twice of Others
@@ -34,21 +34,23 @@ public class Arrays_LargestNumberAtLeastTwiceofOthers {
     public static void main(String[] args) {
         Arrays_LargestNumberAtLeastTwiceofOthers arr = new Arrays_LargestNumberAtLeastTwiceofOthers();
         arr.dominantIndex(new int[]{3, 6, 1, 0});
+//        arr.dominantIndex(new int[]{1,2,3,4});
     }
 
     public int dominantIndex(int[] nums) {
 //        int[] originalArr = nums;
-//        Arrays.sort(nums);
+//        Arrays.sort(originalArr);
+
         int maxIndex = 0;
         int maxNum = nums[0];
         for(int i=0;i<nums.length;i++){
-            if(maxNum < nums[i]){
-                maxNum = nums[i];
-                maxIndex = i;
+            if(maxNum >= nums[i] * nums[i]){
+                maxNum = nums[i-1];
+                maxIndex = i-1;
+            } else {
+                maxIndex = -1;
             }
-
-
         }
-        return 0;
+        return maxIndex;
     }
 }
